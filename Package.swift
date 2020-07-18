@@ -16,6 +16,6 @@ let package = Package(
     targets: [
         .target(
             name: "TIUIKitCore",
-            path: "TIUIKitCore/Sources"),
+            path: "Sources"),
     ]
 )

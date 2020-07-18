@@ -20,16 +20,24 @@
 //  THE SOFTWARE.
 //
 
-#if !os(macOS)
+/// Protocol with methods that should be called in constructor methods of view.
+public protocol InitializableView {
 
-import UIKit
+    /// Main method that should call other methods in particular order.
+    func initializeView()
 
-public extension UIStackView {
-    func addArrangedSubviews(_ views: [UIView]) {
-        views.forEach {
-            addArrangedSubview($0)
-        }
-    }
+    /// Method for adding views to current view.
+    func addViews()
+    
+    /// Confgiure layout of subviews.
+    func configureLayout()
+
+    /// Method for binding to data or user actions.
+    func bindViews()
+
+    /// Appearance configuration method.
+    func configureAppearance()
+
+    /// Localization method.
+    func localize()
 }
-
-#endif
